@@ -1,0 +1,19 @@
+@use "../../styles/partials/palette";
+@use "../../styles/partials/mixin";
+
+.ToggleBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 1rem;
+
+	&__Dropdown {
+		margin-left: 1rem;
+		font-size: 1rem;
+		padding: 0.5rem 1rem;
+		border-radius: 10px;
+		border: none;
+		cursor: pointer;
+	}
+
+}

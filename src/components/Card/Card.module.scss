@@ -1,0 +1,92 @@
+@use "../../styles/partials/typography";
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid;
+    border-radius: 20px;
+    margin: 1rem;
+    width: 300px;
+    box-shadow: 0 0 5px 0, 0 5px 20px 0;
+
+    &:hover {
+        background-color: #f9f9f9;
+        color: #213547;
+    }
+
+}
+
+.Heart {
+    display: flex;
+    justify-content: right;
+    margin: 1rem 0rem;
+
+
+    &__Filled {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        height: 2rem;
+        width: 2rem;
+        border: 1px solid red;
+        font-size: 2rem;
+        color: red;
+
+        &:hover {
+            color: white;
+            background-color: red;
+        }
+    }
+
+    &__NotFilled {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        height: 2rem;
+        width: 2rem;
+        border: 1px solid;
+        font-size: 2rem;
+
+        &:hover {
+            color: white;
+            background-color: black;
+        }
+    }
+}
+
+.Content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+
+    &__Title {
+        font-weight: bold;
+        font-size: 1.5rem;
+        font-family: typography.$primary-font;
+        line-height: 2rem;
+        text-align: center;
+        margin: 1rem;
+        height: 4rem;
+    }
+
+    &__Price {
+        margin: 1rem;
+    }
+
+
+}
+
+.Image {
+    padding: 1rem;
+    width: 200px;
+    height: 200px;
+    object-fit: scale-down;
+
+}
