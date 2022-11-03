@@ -16,51 +16,42 @@ const App = () => {
 					<Route
 						path="/"
 						element={
-							<>
+							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Home</h1>
-								<p>TODO: Full-width Banner</p>
-								<p>
-									TODO: Make favourite buttons interactable
-									and updated with database
-								</p>
 								<ProductList />
-							</>
+							</div>
 						}
 					/>
 
 					<Route
 						path="/products"
 						element={
-							<>
+							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Products</h1>
-								<p>
-									TODO: Fix extra /product, maybe duplicate
-									ProductList component?
-								</p>
 								<ProductList />
-							</>
+							</div>
 						}
 					/>
 
 					<Route
 						path="/favourites"
 						element={
-							<>
+							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Favourites</h1>
 								<p>TODO: Filter cards based on isFav</p>
 								<ProductList />
-							</>
+							</div>
 						}
 					/>
 
 					<Route
 						path="/cart"
 						element={
-							<>
+							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Cart</h1>
 								<p>TODO: Use context?</p>
 								<p> In Progress</p>
-							</>
+							</div>
 						}
 					/>
 

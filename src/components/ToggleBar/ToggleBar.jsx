@@ -3,7 +3,7 @@ import styles from "./ToggleBar.module.scss";
 const ToggleBar = ({ name, nameDisplay, options, onInputChange }) => {
 	return (
 		<div className={styles.ToggleBar}>
-			<div className={styles.ToggleBar__Name}>{nameDisplay}</div>
+			<h3>{nameDisplay}</h3>
 			<select
 				className={styles.ToggleBar__Dropdown}
 				onChange={onInputChange}
