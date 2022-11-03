@@ -2,13 +2,13 @@ import Rating from "../Rating/Rating";
 import styles from "./Card.module.scss";
 import { NavLink } from "react-router-dom";
 const Card = ({ data }) => {
-	const quantity = data.quantity && data.quantity.join(", ");
-	const variants = data.variants && data.variants.join(" | ");
-	const sizes = data.size && data.size.join(" | ");
-	const prices = data.price && data.price.join(", ");
+	// const quantity = data.quantity && data.quantity.join(", ");
+	// const variants = data.variants && data.variants.join(" | ");
+	// const sizes = data.size && data.size.join(" | ");
+	// const prices = data.price && data.price.join(", ");
 	const heart = data.isFav ? styles.Heart__Filled : styles.Heart__NotFilled;
 	return (
-		<NavLink to={`products/${data.id}`}>
+		<NavLink to={`/${data.id}`}>
 			<div className={styles.Card}>
 				<div className={styles.Top}>
 					<div className={styles.Heart}>

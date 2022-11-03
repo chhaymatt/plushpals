@@ -1,10 +1,52 @@
-.Description {
-	margin: 1rem;
+.Product {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
 }
 
-.Image {
-    border: 1px solid;
-	width: 400px;
-	height: 400px;
-	object-fit: cover;
+.Picture {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+
+    &__ImageMain {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+    }
+
+	&__Image {
+		width: 300px;
+		height: 300px;
+		object-fit: scale-down;
+	}
+}
+
+.Content {
+    margin-left: 1rem;
+	display: flex;
+	flex-direction: column;
+    width: 50%;
+
+	&__Title {
+		margin-bottom: 1rem;
+	}
+
+	&__Description {
+		object-fit: fill;
+
+        img {
+            margin: 1rem;
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+        }
+	}
+
+    &__Price {
+        margin: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+    }
 }

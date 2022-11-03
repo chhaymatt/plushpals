@@ -17,30 +17,54 @@ const App = () => {
 						path="/"
 						element={
 							<>
-								<h1>Home</h1>
-                <ProductList />
+								<h1 className={styles.Heading}>Home</h1>
+								<p>TODO: Full-width Banner</p>
+								<p>
+									TODO: Make favourite buttons interactable
+									and updated with database
+								</p>
+								<ProductList />
 							</>
 						}
 					/>
+
+					<Route
+						path="/products"
+						element={
+							<>
+								<h1 className={styles.Heading}>Products</h1>
+								<p>
+									TODO: Fix extra /product, maybe duplicate
+									ProductList component?
+								</p>
+								<ProductList />
+							</>
+						}
+					/>
+
 					<Route
 						path="/favourites"
 						element={
 							<>
-								<h1>Favourites</h1>
+								<h1 className={styles.Heading}>Favourites</h1>
+								<p>TODO: Filter cards based on isFav</p>
 								<ProductList />
 							</>
 						}
 					/>
+
 					<Route
 						path="/cart"
 						element={
 							<>
-								<h1>Cart</h1>
-								<ProductList />
+								<h1 className={styles.Heading}>Cart</h1>
+								<p>TODO: Use context?</p>
+								<p> In Progress</p>
 							</>
 						}
 					/>
-					<Route path="products/:id" element={<Product />} />
+
+					<Route path="/:id" element={<Product />} />
 				</Routes>
 			</BrowserRouter>
 			<Footer />
