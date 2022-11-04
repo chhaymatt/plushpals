@@ -38,8 +38,7 @@ const App = () => {
 						element={
 							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Favourites</h1>
-								<p>TODO: Filter cards based on isFav</p>
-								<ProductList />
+								<ProductList isFavourites={true} />
 							</div>
 						}
 					/>

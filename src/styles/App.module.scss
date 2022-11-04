@@ -1,3 +1,5 @@
+@use "./partials//typography";
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +8,7 @@
 .Heading {
     margin: 1rem;
     text-align: center;
+    font-family: typography.$primary-font;
 }
 
 .Container {

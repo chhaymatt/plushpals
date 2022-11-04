@@ -3,7 +3,7 @@ import Card from "../../components/Card/Card";
 import { getProducts } from "../../services/products";
 import styles from "./ProductList.module.scss";
 
-const ProductList = () => {
+const ProductList = ({ isFavourites }) => {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
@@ -12,9 +12,13 @@ const ProductList = () => {
 
 	return (
 		<div className={styles.ProductList}>
-			{products.map((data) => (
-				<Card key={data.id} data={data} />
-			))}
+			{products.map((data) =>
+				isFavourites ? (
+					data.isFav && <Card key={data.id} data={data} />
+				) : (
+					<Card key={data.id} data={data} />
+				)
+			)}
 		</div>
 	);
 };

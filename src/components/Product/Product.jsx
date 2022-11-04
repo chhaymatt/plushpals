@@ -34,14 +34,14 @@ const Product = () => {
 	}, []);
 
 	useEffect(() => {
-		product &&
-			console.log(
-				`${formState.variant}, ${formState.size}, $${
-					product.variant[formState.variant][formState.size].quantity
-				}, Qty: ${
-					product.variant[formState.variant][formState.size].quantity
-				} ${Object.keys(product.variant[formState.variant])}`
-			);
+		// product &&
+		// 	console.log(
+		// 		`${formState.variant}, ${formState.size}, $${
+		// 			product.variant[formState.variant][formState.size].quantity
+		// 		}, Qty: ${
+		// 			product.variant[formState.variant][formState.size].quantity
+		// 		} ${Object.keys(product.variant[formState.variant])}`
+		// 	);
 		product &&
 			setPrice(
 				product.variant[formState.variant][
@@ -59,9 +59,9 @@ const Product = () => {
 		setFormState({ ...formState, [name]: value });
 	};
 	//Object.keys(product.variant[formState.variant]) replace as prop option
-	if (product) {
-		console.log(Object.keys(product.variant[formState.variant]));
-	}
+	// if (product) {
+	// 	console.log(Object.keys(product.variant[formState.variant]));
+	// }
 	return (
 		product && (
 			<div className={styles.Container}>
