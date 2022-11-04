@@ -9,43 +9,59 @@ import Fav from "../Fav/Fav";
 const Product = () => {
 	const { id } = useParams();
 	const [product, setProduct] = useState("");
-	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState("");
-	const [count, setCount] = useState(0);
-	const [priceIndex, setPriceIndex] = useState(0);
+	const [price, setPrice] = useState("N/A");
+	const [quantity, setQuantity] = useState("N/A");
 
-	const initialState = {};
+	const initialState = {
+		variant: "Loading Variant",
+		size: "Loading Size",
+	};
 
 	const [formState, setFormState] = useState(initialState);
 
 	useEffect(() => {
 		getProductById(id)
-			.then((data) => setProduct(data))
-			.catch((err) => setError(err.message))
-			.finally(() => setLoading(false));
+			.then((data) => {
+				setProduct(data);
+				setFormState({
+					...formState,
+					variant: data.variants[0],
+					size: data.size[0],
+				});
+			})
+			.catch((err) => setError(err.message));
 	}, []);
+
+	useEffect(() => {
+		product &&
+			console.log(
+				`${formState.variant}, ${formState.size}, $${
+					product.variant[formState.variant][formState.size].quantity
+				}, Qty: ${
+					product.variant[formState.variant][formState.size].quantity
+				} ${Object.keys(product.variant[formState.variant])}`
+			);
+		product &&
+			setPrice(
+				product.variant[formState.variant][
+					formState.size
+				].price.toFixed(2)
+			);
+		product &&
+			setQuantity(
+				product.variant[formState.variant][formState.size].quantity
+			);
+	}, [formState]);
 
 	const onInputChange = (event) => {
 		const { name, value } = event.target;
 		setFormState({ ...formState, [name]: value });
 	};
-
-	useEffect(() => {
-		if (formState.size == "Small") {
-			setPriceIndex(0);
-		} else if (formState.size == "Medium") {
-			setPriceIndex(1);
-		} else if (formState.size == "Large") {
-			setPriceIndex(2);
-		} else if (formState.size == "Extra-Large") {
-			setPriceIndex(3);
-		}
-	}, [formState]);
-
-	// setInterval(() => {
-	// 	setCount(count + 1);
-	// }, 2000);
-
+	//Object.keys(product.variant[formState.variant]) replace as prop option
+	if (product) {
+		console.log(Object.keys(product.variant[formState.variant]));
+	}
 	return (
 		product && (
 			<div className={styles.Container}>
@@ -53,7 +69,7 @@ const Product = () => {
 					<div className={styles.Picture}>
 						<img
 							className={styles.Picture__ImageMain}
-							src={product.images[count]}></img>
+							src={product.images[0]}></img>
 						{product.images.map((image, index) => (
 							<img
 								key={index}
@@ -63,6 +79,7 @@ const Product = () => {
 							/>
 						))}
 					</div>
+
 					<div className={styles.Content}>
 						{product.isFav && <Fav />}
 						<h1 className={styles.Content__Title}>
@@ -82,8 +99,12 @@ const Product = () => {
 							options={product.size}
 							onInputChange={onInputChange}></ToggleBar>
 						<div className={styles.Content__Split}>
+							<h3>In Stock</h3>
+							{<h3>{quantity}</h3>}
+						</div>
+						<div className={styles.Content__Split}>
 							<h3>Price</h3>
-							<h2>${product.price[priceIndex].toFixed(2)}</h2>
+							<h2>${price}</h2>
 						</div>
 						<button>Add to Bag</button>
 						<Divider></Divider>
