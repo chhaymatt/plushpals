@@ -1,9 +1,11 @@
 @use "../../styles/partials/typography";
+@use "../../styles/partials/palette";
 
 .Product {
 	display: flex;
 	justify-content: center;
 	padding: 1rem;
+	font-family: typography.$primary-font;
 }
 
 .Picture {
@@ -13,27 +15,37 @@
 	width: 50%;
 
 	&__ImageMain {
-		width: 100%;
+		width: 90%;
 		height: 500px;
-		object-fit: cover;
+		object-fit: scale-down;
+		border-radius: 10px;
+		margin: 0.5rem;
+		padding: 1rem;
+		background-color: palette.$imagebg-colour;
 	}
 
 	&__Image {
 		width: 300px;
 		height: 300px;
-		object-fit: cover;
+		object-fit: scale-down;
+		border-radius: 10px;
+		margin: 0.5rem;
 	}
 }
 
 .Content {
-	margin-left: 1rem;
+	margin: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	width: 50%;
+	color: palette.$primary-colour;
+	background-color: palette.$tertiary-colour;
+	padding: 1rem;
+	border-radius: 10px;
+	word-wrap: break-word;
 
 	&__Title {
 		margin-bottom: 1rem;
-		font-family: typography.$primary-font;
 	}
 
 	&__Subheading {
@@ -48,6 +60,7 @@
 			width: 50%;
 			height: 50%;
 			object-fit: cover;
+			border-radius: 10px;
 		}
 	}
 
@@ -55,5 +68,27 @@
 		margin: 1rem 0;
 		display: flex;
 		justify-content: space-between;
+
+		h3 {
+			margin-right: 0.5rem;
+		}
+
+		p {
+			text-align: right;
+		}
+	}
+}
+
+.Button {
+	background-color: palette.$secondary-colour;
+	padding: 0.5rem;
+	font-family: typography.$primary-font;
+	border: 1px solid palette.$secondary-colour;
+	border-radius: 10px;
+	font-size: 1rem;
+
+	&:hover {
+		background-color: palette.$septenary-colour;
+		cursor: pointer;
 	}
 }

@@ -1,11 +1,42 @@
+@use "../../styles/partials/typography";
+@use "../../styles/partials/palette";
+
 .Bar {
+    font-family: typography.$primary-font;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
 }
 
+.Logo {
+    width: 200px;
+    background-image: url("https://i.imgur.com/z7h4LM5.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0.5rem;
+
+    &:hover {
+        background-color:  palette.$secondary-colour;
+        // background-image: url("https://i.imgur.com/z7h4LM5.png");
+        border-radius: 10px;
+    }
+}
+
+.Container {
+    display: flex;
+    align-items: center;
+}
 .Link {
     text-align: center;
-    width: 10%;
     padding: 1rem 2rem;
+    margin: 0.5rem;
+    text-decoration: inherit;
+    color: palette.$primary-colour;
+
+    &:hover {
+        background-color:  palette.$secondary-colour;
+        border-radius: 10px;
+    }
 }
+

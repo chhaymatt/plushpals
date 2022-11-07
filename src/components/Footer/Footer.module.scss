@@ -1,11 +1,19 @@
 @use "../../styles/partials/palette";
+@use "../../styles/partials/typography";
 
 .Footer {
 	margin: 2rem;
 	text-align: center;
+	color: palette.$primary-colour;
 
 	&__Link {
 		padding: 0.5rem 1rem;
 		border-radius: 10px;
+		color: palette.$primary-colour;
+		font-family: typography.$primary-font;
+
+		&:hover {
+			background-color: palette.$secondary-colour;
+		}
 	}
 }

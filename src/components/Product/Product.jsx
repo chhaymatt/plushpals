@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
-import { getProductById } from "../../services/products";
+import { addItemToBag, getProductById } from "../../services/products";
 import { useState, useEffect } from "react";
 import ToggleBar from "../ToggleBar/ToggleBar";
 import Rating from "../Rating/Rating";
@@ -7,6 +7,7 @@ import styles from "./Product.module.scss";
 import Divider from "../Divider/Divider";
 import Fav from "../Fav/Fav";
 const Product = () => {
+	const navigate = useNavigate();
 	const { id } = useParams();
 	const [product, setProduct] = useState("");
 	const [error, setError] = useState("");
@@ -28,10 +29,20 @@ const Product = () => {
 					...formState,
 					variant: data.variants[0],
 					size: data.size[0],
+					title: data.title,
+					image: data.images[0],
+					quantity: 1,
+					productId: data.id,
+					price: price,
 				});
 			})
 			.catch((err) => setError(err.message));
 	}, []);
+
+	const onAddToBag = (event) => {
+		console.log(formState);
+		addItemToBag(formState).then(() => navigate("/bag"));
+	};
 
 	useEffect(() => {
 		// product &&
@@ -42,6 +53,7 @@ const Product = () => {
 		// 			product.variant[formState.variant][formState.size].quantity
 		// 		} ${Object.keys(product.variant[formState.variant])}`
 		// 	);
+
 		product &&
 			setPrice(
 				product.variant[formState.variant][
@@ -99,14 +111,16 @@ const Product = () => {
 							options={product.size}
 							onInputChange={onInputChange}></ToggleBar>
 						<div className={styles.Content__Split}>
-							<h3>In Stock</h3>
+							<h4>In Stock</h4>
 							{<h3>{quantity}</h3>}
 						</div>
 						<div className={styles.Content__Split}>
 							<h3>Price</h3>
 							<h2>${price}</h2>
 						</div>
-						<button>Add to Bag</button>
+						<button onClick={onAddToBag} className={styles.Button}>
+							Add to Bag
+						</button>
 						<Divider></Divider>
 						<h2 className={styles.Content__Subheading}>
 							Product Information

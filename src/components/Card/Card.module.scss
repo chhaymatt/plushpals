@@ -1,17 +1,20 @@
 @use "../../styles/partials/typography";
+@use "../../styles/partials/palette";
 
 .Card {
+    text-decoration: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid;
+    border: 1px solid palette.$tertiary-colour;
     border-radius: 20px;
     margin: 0.5rem;
     width: 300px;
+    background-color: palette.$tertiary-colour;
 
     &:hover {
-        background-color: #f9f9f9;
+        background-color: palette.$quinary-colour;
         color: #213547;
     }
 
@@ -21,6 +24,7 @@
     display: flex;
     justify-content: right;
     margin: 1rem 0rem;
+    color: palette.$septenary-colour;
 
 
     &__Filled {
@@ -31,7 +35,7 @@
         height: 2rem;
         width: 2rem;
         border: 1px solid red;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: red;
 
         &:hover {
@@ -48,7 +52,7 @@
         height: 2rem;
         width: 2rem;
         border: 1px solid;
-        font-size: 2rem;
+        font-size: 1.5rem;
 
         &:hover {
             color: white;
@@ -64,11 +68,12 @@
     align-items: center;
     justify-content: space-between;
     height: 50%;
+    color: palette.$primary-colour;
+    font-family: typography.$primary-font;
 
     &__Title {
         font-weight: bold;
         font-size: 1.5rem;
-        font-family: typography.$primary-font;
         line-height: 2rem;
         text-align: center;
         margin: 1rem;

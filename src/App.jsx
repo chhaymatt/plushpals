@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import BagList from "./components/BagList/BagList";
 import Footer from "./components/Footer/Footer";
 import Product from "./components/Product/Product";
 import Nav from "./containers/Nav/Nav";
@@ -44,12 +44,11 @@ const App = () => {
 					/>
 
 					<Route
-						path="/cart"
+						path="/bag"
 						element={
 							<div className={styles.Container}>
-								<h1 className={styles.Heading}>Cart</h1>
-								<p>TODO: Use context?</p>
-								<p> In Progress</p>
+								<h1 className={styles.Heading}>Bag</h1>
+								<BagList />
 							</div>
 						}
 					/>

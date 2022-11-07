@@ -7,7 +7,7 @@ const ProductList = ({ isFavourites }) => {
 	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
-		getProducts().then((products) => setProducts(products));
+		getProducts("products").then((products) => setProducts(products));
 	}, []);
 
 	return (

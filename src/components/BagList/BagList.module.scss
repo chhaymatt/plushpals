@@ -1,0 +1,16 @@
+@use "../../styles/partials/typography";
+@use "../../styles/partials/palette";
+
+.BagList {
+    font-family: typography.$primary-font;
+    color: palette.$primary-colour;
+}
+
+.Link {
+    color: palette.$secondary-colour;
+    cursor: pointer;
+
+    &:hover {
+        color: palette.$quarternary-colour;
+    }
+}

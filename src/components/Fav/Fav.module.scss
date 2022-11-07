@@ -1,9 +1,10 @@
+@use "../../styles/partials/palette";
+
 .Fav {
     margin: 1rem 0;
-    border: 1px solid rgb(181, 33, 22);
-    background-color: rgb(234, 70, 70);
+    background-color: palette.$gold-colour;
     border-radius: 10px;
-    color: white;
+    color: palette.$primary-colour;
     font-size: 0.8rem;
     width: 100px;
     text-align: center;

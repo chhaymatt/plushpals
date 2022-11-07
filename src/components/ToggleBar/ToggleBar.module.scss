@@ -6,15 +6,17 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin: 1rem 0;
+	margin: 0.5rem 0;
 
 	&__Dropdown {
+		min-width: 10rem;
 		margin-left: 1rem;
 		font-size: 1rem;
 		padding: 0.5rem 1rem;
 		border-radius: 10px;
 		border: none;
 		cursor: pointer;
+		background-color: palette.$secondary-colour;
 	}
 
 }
