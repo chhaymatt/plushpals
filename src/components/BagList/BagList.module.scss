@@ -2,15 +2,21 @@
 @use "../../styles/partials/palette";
 
 .BagList {
-    font-family: typography.$primary-font;
-    color: palette.$primary-colour;
+	font-family: typography.$primary-font;
+	color: palette.$primary-colour;
 }
 
 .Link {
-    color: palette.$secondary-colour;
-    cursor: pointer;
+	color: palette.$secondary-colour;
+	cursor: pointer;
 
-    &:hover {
-        color: palette.$quarternary-colour;
-    }
+	&:hover {
+		color: palette.$quarternary-colour;
+	}
+}
+
+.Error {
+	font-family: typography.$primary-font;
+	color: palette.$primary-colour;
+    text-align: center;
 }

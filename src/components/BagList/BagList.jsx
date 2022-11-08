@@ -6,9 +6,12 @@ import { NavLink } from "react-router-dom";
 
 const BagList = () => {
 	const [bagItems, setBagItems] = useState([]);
+	const [error, setError] = useState();
 
 	useEffect(() => {
-		getProducts("bag").then((bagItems) => setBagItems(bagItems));
+		getProducts("bag")
+			.then((bagItems) => setBagItems(bagItems))
+			.catch((err) => setError(Object.values(err)[0]));
 	}, []);
 
 	return (
@@ -17,11 +20,16 @@ const BagList = () => {
 				bagItems.map((data) => <BagCard key={data.id} data={data} />)
 			) : (
 				<div>
-					No items in the bag, want to see products?
+					There are no items in the bag,&nbsp;
 					<NavLink className={styles.Link} to="/products">
-						Click here.
+						want to see products?
 					</NavLink>
 				</div>
+			)}
+			{error && (
+				<p className={styles.Error}>
+					There seems to be a problem, error: {error}
+				</p>
 			)}
 		</div>
 	);

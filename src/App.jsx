@@ -4,6 +4,7 @@ import Footer from "./components/Footer/Footer";
 import Product from "./components/Product/Product";
 import Nav from "./containers/Nav/Nav";
 import ProductList from "./containers/ProductList/ProductList";
+import Carousel from "./containers/Carousel/Carousel";
 import styles from "./styles/App.module.scss";
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
 						path="/"
 						element={
 							<div className={styles.Container}>
-								<h1 className={styles.Heading}>Home</h1>
+								<Carousel />
 								<ProductList />
 							</div>
 						}
