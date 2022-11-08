@@ -9,7 +9,7 @@ const BagList = () => {
 
 	useEffect(() => {
 		getProducts("bag").then((bagItems) => setBagItems(bagItems));
-	}, [bagItems]);
+	}, []);
 
 	return (
 		<div className={styles.BagList}>
