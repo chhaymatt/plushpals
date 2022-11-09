@@ -1,47 +1,53 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/palette";
 
-
 .Image {
 	width: 100px;
 	height: 100px;
 	object-fit: contain;
-    margin-right: 1rem;
+	margin-right: 1rem;
 }
 
 .Top {
 	display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
 }
 
 .Bottom {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
 .Content {
 	display: flex;
-    flex-direction: column;
-    width: 100%;
+	flex-direction: column;
+	width: 100%;
 }
 
 .BagCard {
-    width: 600px;
-    padding: 1rem;
-    border-radius: 10px;
+	width: 600px;
+	padding: 1rem;
+	border-radius: 10px;
 	display: flex;
-    font-family: typography.$primary-font;
-    color: palette.$primary-colour;
+	font-family: typography.$primary-font;
+	color: palette.$primary-colour;
 	background-color: palette.$tertiary-colour;
-    margin: 1rem;
+	margin: 1rem;
 }
 
-
 .Remove {
-    color: red;
-    
+	color: red;
+
+	&:hover {
+		color: rgb(121, 4, 4);
+		cursor: pointer;
+	}
+}
+
+.Link {
+	color: palette.$primary-colour;
+
     &:hover {
-        color: rgb(121, 4, 4);
-        cursor: pointer;
+        color: palette.$secondary-colour;
     }
 }

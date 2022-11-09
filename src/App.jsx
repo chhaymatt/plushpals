@@ -8,6 +8,30 @@ import Carousel from "./containers/Carousel/Carousel";
 import styles from "./styles/App.module.scss";
 
 const App = () => {
+	const slides = [
+		{
+			url: "https://i.imgur.com/ArNsn6z.jpg",
+			title: "Avo the Adorable Avocado",
+			linkTo: "EyhvV4uEMl94pUEuJ2lK",
+		},
+		{
+			url: "https://i.imgur.com/V7IyKAR.png",
+			title: "Boba",
+			linkTo: "EyhvV4uEMl94pUEuJ2lK",
+		},
+		{
+			url: "https://i.imgur.com/lVQDez7.jpg",
+			title: "Curious Cat",
+			linkTo: "2JdQzGJmF7KaAxml3CSe",
+		},
+	];
+
+	const containerStyles = {
+		width: "500px",
+		height: "280px",
+		margin: "0 auto",
+	};
+
 	return (
 		<>
 			<BrowserRouter>
@@ -17,10 +41,15 @@ const App = () => {
 					<Route
 						path="/"
 						element={
-							<div className={styles.Container}>
-								<Carousel />
-								<ProductList />
-							</div>
+							<>
+								<Carousel
+									style={containerStyles}
+									slides={slides}
+								/>
+								<div className={styles.Container}>
+									<ProductList />
+								</div>
+							</>
 						}
 					/>
 

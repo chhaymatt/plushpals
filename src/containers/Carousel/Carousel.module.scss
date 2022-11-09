@@ -1,13 +1,72 @@
-.Carousel {
-    height: 800px;
-    width: 100%;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/palette";
 
+.Carousel {
+	height: 500px;
+	position: relative;
+	margin-bottom: 1rem;
+	margin-top: 5rem;
+	user-select: none;
+	font-family: typography.$primary-font;
+}
+.ArrowLeft {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	left: 1rem;
+	font-size: 5rem;
+	color: palette.$imagebg-colour;
+	z-index: 1;
+	cursor: pointer;
+
+	&:hover {
+		color: palette.$senary-colour;
+	}
 }
 
-.Image {
-    height: 50vh;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    
+.ArrowRight {
+	position: absolute;
+	top: 50%;
+	transform: translate(0, -50%);
+	right: 1rem;
+	font-size: 5rem;
+	color: palette.$imagebg-colour;
+	z-index: 1;
+	cursor: pointer;
+
+	&:hover {
+		color: palette.$senary-colour;
+	}
+}
+
+.Dots {
+	display: flex;
+	justify-content: center;
+
+	&__Symbols {
+		margin: 1rem 1rem;
+		cursor: pointer;
+		font-size: 100px;
+		line-height: 2rem;
+		color: palette.$imagebg-colour;
+
+		&:hover {
+			color: palette.$senary-colour;
+		}
+	}
+}
+
+.Info {
+	color: palette.$imagebg-colour;
+	padding: 0.5rem 2rem;
+	border-radius: 10px;
+	font-size: 2rem;
+	backdrop-filter: blur(20px);
+	border: 1px solid palette.$imagebg-colour;
+	cursor: pointer;
+
+	&:hover {
+		background-color: palette.$senary-colour;
+		color: black;
+	}
 }

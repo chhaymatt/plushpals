@@ -3,13 +3,16 @@ import styles from "./Card.module.scss";
 import { NavLink } from "react-router-dom";
 
 const Card = ({ data }) => {
-	const heart = data.isFav ? styles.Heart__Filled : styles.Heart__NotFilled;
+	const heartStyle = data.isFav
+		? styles.Heart__Filled
+		: styles.Heart__NotFilled;
+	const heartSymbol = data.isFav ? "♥" : "♡";
 	return (
 		<NavLink to={`/${data.id}`}>
 			<div className={styles.Card}>
 				<div className={styles.Top}>
 					<div className={styles.Heart}>
-						<div className={heart}>♥</div>
+						<div className={heartStyle}>{heartSymbol}</div>
 					</div>
 					<img
 						className={styles.Image}

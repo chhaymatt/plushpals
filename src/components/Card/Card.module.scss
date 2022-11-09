@@ -28,14 +28,14 @@
 
 
     &__Filled {
+        font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 100%;
-        height: 2rem;
-        width: 2rem;
-        border: 1px solid red;
-        font-size: 1.5rem;
+        height: 3rem;
+        width: 3rem;
+        font-size: 2rem;
         color: red;
 
         &:hover {
@@ -45,14 +45,14 @@
     }
 
     &__NotFilled {
+        font-weight: bold;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 100%;
-        height: 2rem;
-        width: 2rem;
-        border: 1px solid;
-        font-size: 1.5rem;
+        height: 3rem;
+        width: 3rem;
+        font-size: 2rem;
 
         &:hover {
             color: white;
