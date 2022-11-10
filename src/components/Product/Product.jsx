@@ -6,7 +6,7 @@ import Rating from "../Rating/Rating";
 import styles from "./Product.module.scss";
 import Divider from "../Divider/Divider";
 import Fav from "../Fav/Fav";
-const Product = ({ setChanged, isChanged }) => {
+const Product = ({ setChanged }) => {
 	const navigate = useNavigate();
 	const { id } = useParams();
 	const [product, setProduct] = useState("");
@@ -21,6 +21,7 @@ const Product = ({ setChanged, isChanged }) => {
 
 	const [formState, setFormState] = useState(initialState);
 
+	// Get specific product info
 	useEffect(() => {
 		getProductById(id)
 			.then((data) => {
@@ -33,12 +34,12 @@ const Product = ({ setChanged, isChanged }) => {
 					image: data.images[0],
 					quantity: 1,
 					productId: data.id,
-					price: price,
 				});
 			})
 			.catch((err) => setError(err.message));
 	}, []);
 
+	// Add to bag handler
 	const onAddToBag = (event) => {
 		console.log(formState);
 		addItemToBag(formState).then(() => {
@@ -68,6 +69,15 @@ const Product = ({ setChanged, isChanged }) => {
 				product.variant[formState.variant][formState.size].quantity
 			);
 	}, [formState]);
+
+	// Update formState whenever there is a chance to price/quantity
+	useEffect(() => {
+		setFormState({
+			...formState,
+			quantity: 1,
+			price: price,
+		});
+	}, [price, quantity]);
 
 	const onInputChange = (event) => {
 		const { name, value } = event.target;

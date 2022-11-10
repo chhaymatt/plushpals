@@ -1,17 +1,14 @@
-import { useState, useEffect } from "react";
 import BagCard from "../BagCard/BagCard";
-import { getProducts } from "../../services/products";
 import styles from "./BagList.module.scss";
 import { NavLink } from "react-router-dom";
 
-const BagList = ({ bagItems, error, setChanged, isChanged }) => {
+const BagList = ({ bagItems, error, setChanged }) => {
 	return (
 		<div className={styles.BagList}>
 			{bagItems.length > 0 ? (
 				bagItems.map((data) => (
 					<BagCard
 						setChanged={setChanged}
-						isChanged={isChanged}
 						key={data.id}
 						data={data}
 					/>

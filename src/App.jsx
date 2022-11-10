@@ -90,8 +90,11 @@ const App = () => {
 							<div className={styles.Container}>
 								<h1 className={styles.Heading}>
 									Bag{" "}
-									{bagItems.length > 0 &&
-										`(${bagItems.length})`}
+									{bagItems.length > 0 && (
+										<div className={styles.Badge}>
+											{bagItems.length}
+										</div>
+									)}
 								</h1>
 								<BagList
 									bagItems={bagItems}
@@ -104,12 +107,7 @@ const App = () => {
 
 					<Route
 						path="/:id"
-						element={
-							<Product
-								isChanged={isChanged}
-								setChanged={setChanged}
-							/>
-						}
+						element={<Product setChanged={setChanged} />}
 					/>
 				</Routes>
 			</BrowserRouter>
