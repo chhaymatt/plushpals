@@ -1,12 +1,14 @@
 import styles from "./BagCard.module.scss";
 import { deleteBagItemById } from "../../services/products";
 import { useNavigate, NavLink } from "react-router-dom";
-const BagCard = ({ data }) => {
+const BagCard = ({ data, setChanged, isChanged }) => {
 	const navigate = useNavigate();
 
 	const onDeleteButtonClick = () => {
-		console.log(data.id);
-		deleteBagItemById(data.id).then(() => navigate("/bag"));
+		console.log(`Removed bag ID${data.id}`);
+		deleteBagItemById(data.id).then(() =>
+			setChanged((isChanged) => !isChanged)
+		);
 	};
 
 	return (

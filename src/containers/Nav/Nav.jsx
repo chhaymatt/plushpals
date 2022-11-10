@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import styles from "./Nav.module.scss";
 
-const Nav = () => {
+const Nav = ({ bagCount }) => {
 	return (
 		<nav className={styles.Bar}>
-				<NavLink className={styles.Logo} to="/"></NavLink>
+			<NavLink className={styles.Logo} to="/"></NavLink>
 			<div className={styles.Container}>
 				<NavLink className={styles.Link} to="/">
 					Home
@@ -16,7 +16,10 @@ const Nav = () => {
 					Favourites
 				</NavLink>
 				<NavLink className={styles.Link} to="/bag">
-					Bag
+					<p>Bag</p>
+					{bagCount > 0 && (
+						<div className={styles.Badge}>{bagCount}</div>
+					)}
 				</NavLink>
 			</div>
 		</nav>

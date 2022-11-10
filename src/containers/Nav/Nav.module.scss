@@ -33,14 +33,29 @@
 	align-items: center;
 }
 .Link {
+	height: 2rem;
 	text-align: center;
 	padding: 1rem 2rem;
 	margin: 0.5rem;
 	text-decoration: inherit;
 	color: palette.$primary-colour;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&:hover {
 		background-color: palette.$secondary-colour;
 		border-radius: 10px;
 	}
+}
+
+.Badge {
+	margin-left: 0.5rem;
+	border-radius: 100%;
+	background-color: palette.$tertiary-colour;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

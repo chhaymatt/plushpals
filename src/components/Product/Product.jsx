@@ -6,7 +6,7 @@ import Rating from "../Rating/Rating";
 import styles from "./Product.module.scss";
 import Divider from "../Divider/Divider";
 import Fav from "../Fav/Fav";
-const Product = () => {
+const Product = ({ setChanged, isChanged }) => {
 	const navigate = useNavigate();
 	const { id } = useParams();
 	const [product, setProduct] = useState("");
@@ -41,7 +41,10 @@ const Product = () => {
 
 	const onAddToBag = (event) => {
 		console.log(formState);
-		addItemToBag(formState).then(() => navigate("/bag"));
+		addItemToBag(formState).then(() => {
+			setChanged((isChanged) => !isChanged);
+			navigate("/bag");
+		});
 	};
 
 	useEffect(() => {

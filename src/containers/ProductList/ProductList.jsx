@@ -1,18 +1,7 @@
-import { useState, useEffect } from "react";
 import Card from "../../components/Card/Card";
-import { getProducts } from "../../services/products";
 import styles from "./ProductList.module.scss";
 
-const ProductList = ({ isFavourites }) => {
-	const [products, setProducts] = useState([]);
-	const [error, setError] = useState();
-
-	useEffect(() => {
-		getProducts("products")
-			.then((products) => setProducts(products))
-			.catch((err) => setError(Object.values(err)[0]));
-	}, []);
-
+const ProductList = ({ isFavourites, products, error }) => {
 	return (
 		<div className={styles.ProductList}>
 			{error && (

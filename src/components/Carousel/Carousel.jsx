@@ -1,38 +1,67 @@
 import { useState } from "react";
 import styles from "./Carousel.module.scss";
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 
-const Carousel = ({ slides }) => {
+const Carousel = ({ products }) => {
 	const [currentIndex, setCurrentIndex] = useState(0);
+	const [featured, setFeatured] = useState([]);
 
-	const slideStyles = {
-		width: "100%",
-		height: "100%",
-		backgroundPosition: "center",
-		backgroundSize: "cover",
-		backgroundImage: `url(${slides[currentIndex].url})`,
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "end",
-		alignItems: "center",
-	};
+	// Hard coded images
+	const slides = [
+		{
+			url: "https://i.imgur.com/ArNsn6z.jpg",
+			title: "Avo the Adorable Avocado",
+			linkTo: "EyhvV4uEMl94pUEuJ2lK",
+		},
+		{
+			url: "https://i.imgur.com/V7IyKAR.png",
+			title: "Boba",
+			linkTo: "EyhvV4uEMl94pUEuJ2lK",
+		},
+		{
+			url: "https://i.imgur.com/lVQDez7.jpg",
+			title: "Curious Cat",
+			linkTo: "2JdQzGJmF7KaAxml3CSe",
+		},
+	];
 
-	const activeStyle = {
-		color: "red",
-	};
+	// Diagnostics
+	useEffect(() => {
+		products.map((product) => {
+			// Diagnostics
+			if (product.isFeatured) {
+				console.log(product.title, product.isFeaturedImage, product.id);
+			}
 
+			if (product.isFeatured) {
+				setFeatured([
+					...featured,
+					{
+						title: product.title,
+						url: product.isFeaturedImage,
+						linkTo: product.id,
+					},
+				]);
+			}
+		});
+	}, [products]);
+
+	// Clicking on the back button
 	const goToPrevious = () => {
 		const isFirstSlide = currentIndex === 0;
 		const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
 		setCurrentIndex(newIndex);
 	};
 
+	// Clicking on the forward button
 	const goToNext = () => {
 		const isLastSlide = currentIndex === slides.length - 1;
 		const newIndex = isLastSlide ? 0 : currentIndex + 1;
 		setCurrentIndex(newIndex);
 	};
 
+	// Clicking on one of a specific dot
 	const goToSlide = (slideIndex) => {
 		setCurrentIndex(slideIndex);
 	};
@@ -45,7 +74,11 @@ const Carousel = ({ slides }) => {
 			<div className={styles.ArrowRight} onClick={goToNext}>
 				❱
 			</div>
-			<div style={slideStyles}>
+			<div
+				style={{
+					backgroundImage: `url(${slides[currentIndex].url})`,
+				}}
+				className={styles.Slide}>
 				<NavLink to={`/${slides[currentIndex].linkTo}`}>
 					<div
 						className={

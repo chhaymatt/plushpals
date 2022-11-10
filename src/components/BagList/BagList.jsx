@@ -4,20 +4,18 @@ import { getProducts } from "../../services/products";
 import styles from "./BagList.module.scss";
 import { NavLink } from "react-router-dom";
 
-const BagList = () => {
-	const [bagItems, setBagItems] = useState([]);
-	const [error, setError] = useState();
-
-	useEffect(() => {
-		getProducts("bag")
-			.then((bagItems) => setBagItems(bagItems))
-			.catch((err) => setError(Object.values(err)[0]));
-	}, []);
-
+const BagList = ({ bagItems, error, setChanged, isChanged }) => {
 	return (
 		<div className={styles.BagList}>
 			{bagItems.length > 0 ? (
-				bagItems.map((data) => <BagCard key={data.id} data={data} />)
+				bagItems.map((data) => (
+					<BagCard
+						setChanged={setChanged}
+						isChanged={isChanged}
+						key={data.id}
+						data={data}
+					/>
+				))
 			) : (
 				<div>
 					There are no items in the bag,&nbsp;

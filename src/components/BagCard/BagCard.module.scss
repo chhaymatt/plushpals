@@ -21,7 +21,7 @@
 .Content {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: 500px;
 }
 
 .BagCard {
@@ -29,6 +29,7 @@
 	padding: 1rem;
 	border-radius: 10px;
 	display: flex;
+	justify-content: space-between;
 	font-family: typography.$primary-font;
 	color: palette.$primary-colour;
 	background-color: palette.$tertiary-colour;
@@ -47,7 +48,7 @@
 .Link {
 	color: palette.$primary-colour;
 
-    &:hover {
-        color: palette.$secondary-colour;
-    }
+	&:hover {
+		color: palette.$secondary-colour;
+	}
 }

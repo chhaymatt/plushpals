@@ -4,38 +4,39 @@ import Footer from "./components/Footer/Footer";
 import Product from "./components/Product/Product";
 import Nav from "./containers/Nav/Nav";
 import ProductList from "./containers/ProductList/ProductList";
-import Carousel from "./containers/Carousel/Carousel";
+import Carousel from "./components/Carousel/Carousel";
 import styles from "./styles/App.module.scss";
+import { getProducts } from "./services/products";
+import { useState, useEffect } from "react";
 
 const App = () => {
-	const slides = [
-		{
-			url: "https://i.imgur.com/ArNsn6z.jpg",
-			title: "Avo the Adorable Avocado",
-			linkTo: "EyhvV4uEMl94pUEuJ2lK",
-		},
-		{
-			url: "https://i.imgur.com/V7IyKAR.png",
-			title: "Boba",
-			linkTo: "EyhvV4uEMl94pUEuJ2lK",
-		},
-		{
-			url: "https://i.imgur.com/lVQDez7.jpg",
-			title: "Curious Cat",
-			linkTo: "2JdQzGJmF7KaAxml3CSe",
-		},
-	];
-
 	const containerStyles = {
 		width: "500px",
 		height: "280px",
 		margin: "0 auto",
 	};
 
+	const [products, setProducts] = useState([]);
+	const [error, setError] = useState();
+	const [bagItems, setBagItems] = useState([]);
+	const [isChanged, setChanged] = useState(false);
+
+	useEffect(() => {
+		getProducts("products")
+			.then((products) => setProducts(products))
+			.catch((err) => setError(Object.values(err)[0]));
+	}, []);
+
+	useEffect(() => {
+		getProducts("bag")
+			.then((bagItems) => setBagItems(bagItems))
+			.catch((err) => setError(Object.values(err)[0]));
+	}, [isChanged]);
+
 	return (
 		<>
 			<BrowserRouter>
-				<Nav />
+				<Nav bagCount={bagItems.length} />
 
 				<Routes>
 					<Route
@@ -44,10 +45,13 @@ const App = () => {
 							<>
 								<Carousel
 									style={containerStyles}
-									slides={slides}
+									products={products}
 								/>
 								<div className={styles.Container}>
-									<ProductList />
+									<ProductList
+										products={products}
+										error={error}
+									/>
 								</div>
 							</>
 						}
@@ -58,7 +62,10 @@ const App = () => {
 						element={
 							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Products</h1>
-								<ProductList />
+								<ProductList
+									products={products}
+									error={error}
+								/>
 							</div>
 						}
 					/>
@@ -68,7 +75,11 @@ const App = () => {
 						element={
 							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Favourites</h1>
-								<ProductList isFavourites={true} />
+								<ProductList
+									isFavourites={true}
+									products={products}
+									error={error}
+								/>
 							</div>
 						}
 					/>
@@ -77,13 +88,29 @@ const App = () => {
 						path="/bag"
 						element={
 							<div className={styles.Container}>
-								<h1 className={styles.Heading}>Bag</h1>
-								<BagList />
+								<h1 className={styles.Heading}>
+									Bag{" "}
+									{bagItems.length > 0 &&
+										`(${bagItems.length})`}
+								</h1>
+								<BagList
+									bagItems={bagItems}
+									error={error}
+									setChanged={setChanged}
+								/>
 							</div>
 						}
 					/>
 
-					<Route path="/:id" element={<Product />} />
+					<Route
+						path="/:id"
+						element={
+							<Product
+								isChanged={isChanged}
+								setChanged={setChanged}
+							/>
+						}
+					/>
 				</Routes>
 			</BrowserRouter>
 			<Footer />
