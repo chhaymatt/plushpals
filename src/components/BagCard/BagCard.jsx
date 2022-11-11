@@ -15,7 +15,9 @@ const BagCard = ({ data, setChanged }) => {
 			<img src={data.image} className={styles.Image}></img>
 			<div className={styles.Content}>
 				<div className={styles.Top}>
-					<NavLink className={styles.Link} to={`/${data.productId}`}>
+					<NavLink
+						className={styles.Link}
+						to={`/plushpals/${data.productId}`}>
 						<h2>{data.title}</h2>
 					</NavLink>
 					<h2>${data.quantity * data.price}</h2>

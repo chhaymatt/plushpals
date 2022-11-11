@@ -40,7 +40,7 @@ const App = () => {
 
 				<Routes>
 					<Route
-						path="/"
+						path="/plushpals"
 						element={
 							<>
 								<Carousel
@@ -58,7 +58,7 @@ const App = () => {
 					/>
 
 					<Route
-						path="/products"
+						path="/plushpals/products"
 						element={
 							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Products</h1>
@@ -71,7 +71,7 @@ const App = () => {
 					/>
 
 					<Route
-						path="/favourites"
+						path="/plushpals/favourites"
 						element={
 							<div className={styles.Container}>
 								<h1 className={styles.Heading}>Favourites</h1>
@@ -85,7 +85,7 @@ const App = () => {
 					/>
 
 					<Route
-						path="/bag"
+						path="/plushpals/bag"
 						element={
 							<div className={styles.Container}>
 								<h1 className={styles.Heading}>
@@ -106,7 +106,7 @@ const App = () => {
 					/>
 
 					<Route
-						path="/:id"
+						path="/plushpals/:id"
 						element={<Product setChanged={setChanged} />}
 					/>
 				</Routes>

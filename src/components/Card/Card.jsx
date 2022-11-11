@@ -6,7 +6,7 @@ const Card = ({ data }) => {
 	const heartColour = data.isFav ? "red" : "none";
 
 	return (
-		<NavLink to={`/${data.id}`}>
+		<NavLink to={`/plushpals/${data.id}`}>
 			<div className={styles.Card}>
 				<div className={styles.Top}>
 					<div className={styles.Heart}>

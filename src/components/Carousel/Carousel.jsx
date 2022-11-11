@@ -55,7 +55,7 @@ const Carousel = ({ products }) => {
 						backgroundImage: `url(${featured[currentIndex].url})`,
 					}}
 					className={styles.Slide}>
-					<NavLink to={`/${featured[currentIndex].linkTo}`}>
+					<NavLink to={`/plushpals/${featured[currentIndex].linkTo}`}>
 						<div
 							className={
 								styles.Info
