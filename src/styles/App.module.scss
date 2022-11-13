@@ -1,5 +1,7 @@
 @use "./partials/typography";
 @use "./partials/palette";
+@use "./partials/mixin";
+
 * {
 	margin: 0;
 	padding: 0;
@@ -11,8 +13,12 @@
 	font-family: typography.$primary-font;
 	color: palette.$primary-colour;
 	font-size: 4rem;
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
+
+	@include mixin.phone {
+		font-size: 2rem;
+	}
 }
 
 .Container {
@@ -21,6 +27,7 @@
 	align-items: center;
 	min-height: 100vh;
 	margin-top: 5rem;
+	overflow: hidden;
 }
 
 a {
@@ -33,7 +40,7 @@ a {
 	background-color: palette.$tertiary-colour;
 	width: 4rem;
 	height: 4rem;
-    font-size: 2rem;
+	font-size: 2rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;

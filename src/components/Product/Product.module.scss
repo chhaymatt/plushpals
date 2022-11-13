@@ -1,5 +1,6 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/palette";
+@use "../../styles/partials/mixin";
 
 .Product {
 	display: flex;
@@ -8,6 +9,12 @@
 	font-family: typography.$primary-font;
 	margin-top: 5rem;
 	align-items: flex-start;
+
+	@include mixin.phone {
+		flex-direction: column;
+		align-items: center;
+		padding: 0;
+	}
 }
 
 .Picture {
@@ -15,6 +22,10 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 50%;
+
+	@include mixin.phone {
+		width: 325px;
+	}
 
 	&__ImageMain {
 		width: 90%;
@@ -24,6 +35,12 @@
 		margin: 0.5rem;
 		padding: 1rem;
 		background-color: palette.$imagebg-colour;
+
+		@include mixin.phone {
+			margin: 0;
+			width: 325px;
+			height: 200px;
+		}
 	}
 
 	&__Image {
@@ -32,6 +49,10 @@
 		object-fit: scale-down;
 		border-radius: 10px;
 		margin: 0.5rem;
+
+		@include mixin.phone {
+			display: none;
+		}
 	}
 }
 
@@ -45,6 +66,10 @@
 	padding: 1rem;
 	border-radius: 10px;
 	word-wrap: break-word;
+
+	@include mixin.phone {
+		width: 325px;
+	}
 
 	&__Title {
 		margin-bottom: 1rem;
