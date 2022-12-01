@@ -27,3 +27,6 @@ An eCommerce website where a user can view products. Built using React JS, React
 
 -   Check if an existing product/variant/size is in the cart and should increase the quantity by 1
 -   Change the main product image based on the variant and size and associate it with the bag image
+-   Hamburger navigation for better responsiveness
+-   Carousel should automatically go to the next featured product after 5 seconds
+-   User should be able to sort products alphabetically and based on rating, reviews and starting price
