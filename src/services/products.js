@@ -48,7 +48,15 @@ export const addItemToBag = async (data) => {
 	// Take in some data from REACT
 	const { title, image, quantity, variant, size, productId, price } = data;
 	// clean that data
-	const newBagItem = { title, image, quantity, variant, size, productId, price };
+	const newBagItem = {
+		title,
+		image,
+		quantity,
+		variant,
+		size,
+		productId,
+		price,
+	};
 	// Add that data to our movies collection
 	const collectionRef = collection(db, "bag");
 	// Use that colleciton reference to add cleaned data to firebase

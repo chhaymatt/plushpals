@@ -8,8 +8,7 @@ const Footer = () => {
 				target="_blank"
 				className={styles.Footer__Link}
 				rel="noreferrer"
-				href="https://matthewchhay.com/"
-			>{`${year} | Made by Matthew Chhay`}</a>
+				href="https://matthewchhay.com/">{`${year} | Made by Matthew Chhay`}</a>
 		</footer>
 	);
 };

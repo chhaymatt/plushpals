@@ -7,8 +7,7 @@ const ToggleBar = ({ name, nameDisplay, options, onInputChange }) => {
 			<select
 				className={styles.ToggleBar__Dropdown}
 				onChange={onInputChange}
-				name={name}
-			>
+				name={name}>
 				{options.map((element, index) => (
 					<option key={index} value={element}>
 						{element.charAt(0).toUpperCase() + element.slice(1)}

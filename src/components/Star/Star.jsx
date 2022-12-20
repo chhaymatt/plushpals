@@ -7,8 +7,7 @@ const Star = ({ averageRating }) => {
 		<div className={styles.Stars}>
 			<div
 				className={styles.Stars__Filled}
-				style={{ width: starsFilled }}
-			></div>
+				style={{ width: starsFilled }}></div>
 		</div>
 	);
 };
