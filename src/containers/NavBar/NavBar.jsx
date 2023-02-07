@@ -16,7 +16,7 @@ const NavBar = ({ bagCount }) => {
                     className={styles.Logo}
                     onClick={handleCloseNav}
                 >
-                    PlushPals
+                    {/* PlushPals */}
                 </NavLink>
                 <div className={styles.MenuIcon} onClick={handleNav}>
                     <i

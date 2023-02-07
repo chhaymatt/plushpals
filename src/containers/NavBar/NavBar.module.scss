@@ -17,14 +17,20 @@
 }
 
 .Logo {
-    color: palette.$primary-colour;
-    margin-left: 2rem;
+    //color: palette.$primary-colour;
+    margin-left: 1rem;
     cursor: pointer;
     font-size: 2rem;
     padding: 0.5rem;
+    height: 60px;
+    width: 150px;
+    background-image: url("https://i.imgur.com/kSadBMi.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
     &:hover {
-        background-color: palette.$secondary-colour;
+        background-image: url("https://i.imgur.com/hlWABf4.png");
         border-radius: 10px;
     }
 }
@@ -70,7 +76,7 @@
     color: palette.$primary-colour;
 
     &:hover {
-        color: palette.$tertiary-colour;
+        color: palette.$secondary-colour;
     }
 }
 
