@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
-import "./Nav.scss"
+import styles from "./NavBar.module.scss"
 
 const NavBar = ({ bagCount }) => {
     const [showNavMenu, setShowNavMenu] = useState(false)
@@ -10,52 +10,62 @@ const NavBar = ({ bagCount }) => {
 
     return (
         <>
-            <nav className="NavBar">
-                <NavLink to="/" className="Logo" onClick={handleCloseNav}>
+            <nav className={styles.NavBar}>
+                <NavLink
+                    to="/"
+                    className={styles.Logo}
+                    onClick={handleCloseNav}
+                >
                     PlushPals
                 </NavLink>
-                <div className="MenuIcon" onClick={handleNav}>
+                <div className={styles.MenuIcon} onClick={handleNav}>
                     <i
-                        className={showNavMenu ? "fas fa-times" : "fas fa-bars"}
+                        className={showNavMenu ? `fas fa-times` : `fas fa-bars`}
                     />
                 </div>
-                <ul className={showNavMenu ? "Menu active" : "Menu"}>
-                    <li className="Item">
+                <ul
+                    className={
+                        showNavMenu
+                            ? `${styles.Menu} ${styles.active}`
+                            : styles.Menu
+                    }
+                >
+                    <li className={styles.Item}>
                         <NavLink
                             to="/"
-                            className="Link"
+                            className={styles.Link}
                             onClick={handleCloseNav}
                         >
                             Home
                         </NavLink>
                     </li>
-                    <li className="Item">
+                    <li className={styles.Item}>
                         <NavLink
                             to="/products"
-                            className="Link"
+                            className={styles.Link}
                             onClick={handleCloseNav}
                         >
                             Products
                         </NavLink>
                     </li>
-                    <li className="Item">
+                    <li className={styles.Item}>
                         <NavLink
                             to="/favourites"
-                            className="Link"
+                            className={styles.Link}
                             onClick={handleCloseNav}
                         >
                             Favourites
                         </NavLink>
                     </li>
-                    <li className="Item">
+                    <li className={styles.Item}>
                         <NavLink
                             to="/bag"
-                            className="Link"
+                            className={styles.Link}
                             onClick={handleCloseNav}
                         >
                             <div>Bag</div>
                             {bagCount > 0 && (
-                                <div className="Badge">{bagCount}</div>
+                                <div className={styles.Badge}>{bagCount}</div>
                             )}
                         </NavLink>
                     </li>

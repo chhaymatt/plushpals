@@ -65,16 +65,13 @@
     }
 }
 
-.fa-bars {
+.MenuIcon {
+    display: none;
     color: palette.$primary-colour;
 
     &:hover {
         color: palette.$tertiary-colour;
     }
-}
-
-.MenuIcon {
-    display: none;
 }
 
 @include mixin.phone {
@@ -120,14 +117,5 @@
         padding: 1rem;
         font-size: 1.8rem;
         cursor: pointer;
-    }
-
-    .fa-times {
-        color: palette.$primary-colour;
-        font-size: 2rem;
-
-        &:hover {
-            color: palette.$tertiary-colour;
-        }
     }
 }

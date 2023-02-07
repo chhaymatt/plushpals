@@ -15,10 +15,7 @@ const BagCard = ({ data, setChanged }) => {
             <img src={data.image} className={styles.Image}></img>
             <div className={styles.Content}>
                 <div className={styles.Top}>
-                    <NavLink
-                        className={styles.Link}
-                        to={`/plushpals/${data.productId}`}
-                    >
+                    <NavLink className={styles.Link} to={`/${data.productId}`}>
                         <h2>{data.title}</h2>
                     </NavLink>
                     <h2>${data.quantity * data.price}</h2>
@@ -30,6 +27,7 @@ const BagCard = ({ data, setChanged }) => {
                         </div>
                         <div>Qty: {data.quantity}</div>
                         <div>${data.price}/item</div>
+                        <p>Diagnostics</p>
                         <div>Product ID: {data.productId}</div>
                         <div>Bag ID: {data.id}</div>
                     </div>

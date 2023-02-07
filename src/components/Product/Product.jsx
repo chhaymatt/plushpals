@@ -44,7 +44,7 @@ const Product = ({ setChanged }) => {
         console.log(formState)
         addItemToBag(formState).then(() => {
             setChanged((isChanged) => !isChanged)
-            navigate("/plushpals/bag")
+            navigate("/bag")
         })
     }
 

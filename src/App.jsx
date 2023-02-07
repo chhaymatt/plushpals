@@ -2,7 +2,7 @@ import { HashRouter, Route, Routes } from "react-router-dom"
 import BagList from "./components/BagList/BagList"
 import Footer from "./components/Footer/Footer"
 import Product from "./components/Product/Product"
-import Nav from "./containers/Nav/Nav"
+import NavBar from "./containers/NavBar/NavBar"
 import ProductList from "./containers/ProductList/ProductList"
 import Carousel from "./components/Carousel/Carousel"
 import styles from "./styles/App.module.scss"
@@ -36,7 +36,7 @@ const App = () => {
     return (
         <>
             <HashRouter>
-                <Nav bagCount={bagItems.length} />
+                <NavBar bagCount={bagItems.length} />
 
                 <Routes>
                     <Route
