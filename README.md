@@ -9,19 +9,19 @@
 
 ## Table of Contents <!-- omit in toc -->
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Screenshots](#screenshots)
-- [MVP](#mvp)
-- [Going beyond the MVP](#going-beyond-the-mvp)
-- [Setup](#setup)
-  - [For viewing locally and further development](#for-viewing-locally-and-further-development)
-  - [For publishing to GitHub Pages after initial setup](#for-publishing-to-github-pages-after-initial-setup)
-- [Tools Used](#tools-used)
-- [Project Status](#project-status)
-- [Room for Improvement](#room-for-improvement)
-- [Acknowledgements](#acknowledgements)
+-   [Introduction](#introduction)
+-   [Features](#features)
+-   [Technologies Used](#technologies-used)
+-   [Screenshots](#screenshots)
+-   [MVP](#mvp)
+-   [Going beyond the MVP](#going-beyond-the-mvp)
+-   [Setup](#setup)
+    -   [For viewing locally and further development](#for-viewing-locally-and-further-development)
+    -   [For publishing to GitHub Pages after initial setup](#for-publishing-to-github-pages-after-initial-setup)
+-   [Tools Used](#tools-used)
+-   [Project Status](#project-status)
+-   [Room for Improvement](#room-for-improvement)
+-   [Acknowledgements](#acknowledgements)
 
 ## Introduction
 
@@ -87,11 +87,11 @@ Project is ongoing
 
 ## Room for Improvement
 
+-   [x] Hamburger navigation for better responsiveness
 -   Check if an existing product/variant/size is in the cart and should increase the quantity by 1
 -   Bag should calculate the total
 -   Change database structure and link each variant to a product image
 -   Change the main product image based on the variant and size and associate it with the bag image
--   Hamburger navigation for better responsiveness
 -   Carousel should automatically go to the next featured product after 5 seconds
 -   User should be able to sort products alphabetically and based on rating, reviews and starting price
 -   User should be able to add/remove a product from their favourites

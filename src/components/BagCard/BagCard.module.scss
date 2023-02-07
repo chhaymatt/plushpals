@@ -3,63 +3,63 @@
 @use "../../styles/partials/mixin";
 
 .Image {
-	width: 100px;
-	height: 100px;
-	object-fit: contain;
-	margin-right: 1rem;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 1rem;
 }
 
 .Top {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .Bottom {
-	display: flex;
-	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .Content {
-	display: flex;
-	flex-direction: column;
-	width: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
 
-	@include mixin.phone {
-		width: 325px;
-		flex-direction: column;
-	}
+    @include mixin.phone {
+        width: 325px;
+        flex-direction: column;
+    }
 }
 
 .BagCard {
-	width: 600px;
-	padding: 1rem;
-	border-radius: 10px;
-	display: flex;
-	justify-content: space-between;
-	font-family: typography.$primary-font;
-	color: palette.$primary-colour;
-	background-color: palette.$tertiary-colour;
-	margin: 1rem;
+    width: 80%;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: typography.$primary-font;
+    color: palette.$primary-colour;
+    background-color: palette.$tertiary-colour;
+    margin: 1rem;
 
-	@include mixin.phone {
-		width: 325px;
-		flex-direction: column;
-	}
+    @include mixin.phone {
+        width: 325px;
+        flex-direction: column;
+    }
 }
 
 .Remove {
-	color: red;
+    color: red;
 
-	&:hover {
-		color: rgb(121, 4, 4);
-		cursor: pointer;
-	}
+    &:hover {
+        color: rgb(121, 4, 4);
+        cursor: pointer;
+    }
 }
 
 .Link {
-	color: palette.$primary-colour;
+    color: palette.$primary-colour;
 
-	&:hover {
-		color: palette.$secondary-colour;
-	}
+    &:hover {
+        color: palette.$secondary-colour;
+    }
 }

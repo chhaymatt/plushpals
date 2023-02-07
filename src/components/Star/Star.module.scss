@@ -1,19 +1,19 @@
 .Stars {
-	background-image: url("https://i.imgur.com/KAtR60N.png");
-	//background-image: url("https://i.imgur.com/VUR3gjn.png");
-	display: inline-block;
-	background-repeat: repeat-x;
-	height: 20px;
-	width: 100px;
-	background-size: 20px 20px;
+    background-image: url("https://i.imgur.com/KAtR60N.png");
+    //background-image: url("https://i.imgur.com/VUR3gjn.png");
+    display: inline-block;
+    background-repeat: repeat-x;
+    height: 20px;
+    width: 100px;
+    background-size: 20px 20px;
 
-	&__Filled {
-		background-image: url("https://i.imgur.com/KyclXc8.png");
-		// background-image: url("https://i.imgur.com/oc4yL6h.png");
-		background-size: 20px 20px;
-		height: 20px;
-		width: 0px; // change this
-		display: block;
-		background-repeat: repeat-x;
-	}
+    &__Filled {
+        background-image: url("https://i.imgur.com/KyclXc8.png");
+        // background-image: url("https://i.imgur.com/oc4yL6h.png");
+        background-size: 20px 20px;
+        height: 20px;
+        width: 0px; // change this
+        display: block;
+        background-repeat: repeat-x;
+    }
 }

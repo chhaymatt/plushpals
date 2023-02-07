@@ -1,0 +1,133 @@
+@use "../../styles/partials/typography";
+@use "../../styles/partials/palette";
+@use "../../styles/partials/mixin";
+
+.NavBar {
+    font-family: typography.$primary-font;
+    top: 0;
+    position: sticky;
+    background-color: rgba(85, 240, 160, 0.4);
+    backdrop-filter: blur(2rem);
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 999;
+}
+
+.Logo {
+    color: palette.$primary-colour;
+    margin-left: 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 0.5rem;
+
+    &:hover {
+        background-color: palette.$secondary-colour;
+        border-radius: 10px;
+    }
+}
+
+.Badge {
+    margin-left: 0.5rem;
+    border-radius: 100%;
+    background-color: palette.$tertiary-colour;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Menu {
+    display: flex;
+    width: 70vw;
+    justify-content: end;
+    margin-right: 2rem;
+}
+
+.Item {
+    display: flex;
+    align-items: center;
+}
+
+.Link {
+    color: palette.$primary-colour;
+    text-decoration: none;
+    padding: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        background-color: palette.$secondary-colour;
+        border-radius: 10px;
+    }
+}
+
+.fa-bars {
+    color: palette.$primary-colour;
+
+    &:hover {
+        color: palette.$tertiary-colour;
+    }
+}
+
+.MenuIcon {
+    display: none;
+}
+
+@include mixin.phone {
+    .Menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        // height: 100vh;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        transition: all 0.5s;
+        background-color: rgba(255, 255, 255, 1);
+        backdrop-filter: blur(20px);
+    }
+
+    .Menu.active {
+        left: 0;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .Link {
+        text-align: left;
+        padding: 2rem;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            border-radius: 0;
+        }
+    }
+
+    .Logo {
+        position: absolute;
+        left: 0;
+    }
+
+    .MenuIcon {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        padding: 1rem;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .fa-times {
+        color: palette.$primary-colour;
+        font-size: 2rem;
+
+        &:hover {
+            color: palette.$tertiary-colour;
+        }
+    }
+}

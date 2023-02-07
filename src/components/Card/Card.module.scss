@@ -2,90 +2,90 @@
 @use "../../styles/partials/palette";
 
 .Card {
-	text-decoration: inherit;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	border: 1px solid palette.$tertiary-colour;
-	border-radius: 20px;
-	margin: 0.5rem;
-	width: 325px;
-	background-color: palette.$tertiary-colour;
+    text-decoration: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid palette.$tertiary-colour;
+    border-radius: 20px;
+    margin: 0.5rem;
+    width: 325px;
+    background-color: palette.$tertiary-colour;
 
-	&:hover {
-		background-color: palette.$quinary-colour;
-		color: #213547;
-	}
+    &:hover {
+        background-color: palette.$quinary-colour;
+        color: #213547;
+    }
 }
 
 .Heart {
-	display: flex;
-	justify-content: right;
-	margin-top: 2rem;
-	color: palette.$septenary-colour;
+    display: flex;
+    justify-content: right;
+    margin-top: 2rem;
+    color: palette.$septenary-colour;
 
-	&__Filled {
-		font-weight: bold;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 100%;
-		height: 3rem;
-		width: 3rem;
-		font-size: 2rem;
-		color: red;
+    &__Filled {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        height: 3rem;
+        width: 3rem;
+        font-size: 2rem;
+        color: red;
 
-		&:hover {
-			color: white;
-			background-color: red;
-		}
-	}
+        &:hover {
+            color: white;
+            background-color: red;
+        }
+    }
 
-	&__NotFilled {
-		font-weight: bold;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		border-radius: 100%;
-		height: 3rem;
-		width: 3rem;
-		font-size: 2rem;
+    &__NotFilled {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        height: 3rem;
+        width: 3rem;
+        font-size: 2rem;
 
-		&:hover {
-			color: white;
-			background-color: black;
-		}
-	}
+        &:hover {
+            color: white;
+            background-color: black;
+        }
+    }
 }
 
 .Content {
-	padding: 1rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	height: 50%;
-	color: palette.$primary-colour;
-	font-family: typography.$primary-font;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50%;
+    color: palette.$primary-colour;
+    font-family: typography.$primary-font;
 
-	&__Title {
-		font-weight: bold;
-		font-size: 1.5rem;
-		line-height: 2rem;
-		text-align: center;
-		margin: 1rem;
-		height: 4rem;
-	}
+    &__Title {
+        font-weight: bold;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: center;
+        margin: 1rem;
+        height: 4rem;
+    }
 
-	&__Price {
-		margin: 1rem;
-	}
+    &__Price {
+        margin: 1rem;
+    }
 }
 
 .Image {
-	padding: 1rem;
-	width: 200px;
-	height: 200px;
-	object-fit: scale-down;
+    padding: 1rem;
+    width: 200px;
+    height: 200px;
+    object-fit: scale-down;
 }

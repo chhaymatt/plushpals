@@ -3,45 +3,47 @@
 @use "./partials/mixin";
 
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #fafafa;
 }
 
 .Heading {
-	margin: 1rem;
-	text-align: center;
-	font-family: typography.$primary-font;
-	color: palette.$primary-colour;
-	font-size: 4rem;
-	display: flex;
-	align-items: center;
+    margin: 1rem;
+    text-align: center;
+    font-family: typography.$primary-font;
+    color: palette.$primary-colour;
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
 
-	@include mixin.phone {
-		font-size: 2rem;
-	}
+    @include mixin.phone {
+        font-size: 2rem;
+    }
 }
 
 .Container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 100vh;
-	margin-top: 5rem;
-	overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
 a {
-	text-decoration: inherit;
+    text-decoration: inherit;
 }
 
 .Badge {
-	margin-left: 0.5rem;
-	border-radius: 100%;
-	background-color: palette.$tertiary-colour;
-	width: 4rem;
-	height: 4rem;
-	font-size: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    margin-left: 0.5rem;
+    border-radius: 100%;
+    background-color: palette.$tertiary-colour;
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
