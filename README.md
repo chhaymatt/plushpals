@@ -5,7 +5,7 @@
 
 ## Preview <!-- omit in toc -->
 
-![Preview of Matthew Chhay's eShop website](https://i.imgur.com/RlMbnSw.png)
+![Preview of Matthew Chhay's eShop website](https://i.imgur.com/TPHIERK.png)
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -42,8 +42,8 @@ An eCommerce website where a user can view products. Built using React JS, React
 
 ## Screenshots
 
-![A product page](https://i.imgur.com/3JysQoK.png)
-![A bag page](https://i.imgur.com/EUZUd1X.png)
+![A product page](https://i.imgur.com/8f0gCU0.png)
+![A bag page](https://i.imgur.com/HUMimHq.png)
 ![Responsive design](https://i.imgur.com/NJzbTJI.png)
 
 ## MVP
